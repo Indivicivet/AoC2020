@@ -683,7 +683,7 @@ print(
                 ({(i, "jmp"): "nop", (i, "nop"): "jmp"}.get((j, instr), instr), val)
                 for j, (instr, val) in enumerate(prog_orig)
             ])
-            for i in range(len(INPUT.splitlines()))
+            for i in range(len(prog_orig))
         ))(
             [(x, int(n)) for line in INPUT.splitlines() for (x, n) in [line.split(" ")]]
         )
