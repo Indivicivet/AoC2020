@@ -662,10 +662,10 @@ print(
                 }[instr])(pos, acc, *prog[pos]),
                 visited + [pos]
             )
-        ))
+        ))(0, 0, [])
     )(
         [(x, int(n)) for line in INPUT.splitlines() for (x, n) in [line.split(" ")]]
-    )(0, 0, [])
+    )
 )
 print(
     next(filter(None,
@@ -678,11 +678,11 @@ print(
                         }[instr])(pos, acc, *prog[pos]),
                         visited + [pos]
                     )
-                ))
+                ))(0, 0, [])
             )([
                 ({(i, "jmp"): "nop", (i, "nop"): "jmp"}.get((j, instr), instr), val)
                 for j, (instr, val) in enumerate(prog_orig)
-            ])(0, 0, [])
+            ])
             for i in range(len(INPUT.splitlines()))
         ))(
             [(x, int(n)) for line in INPUT.splitlines() for (x, n) in [line.split(" ")]]
