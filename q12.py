@@ -1,5 +1,5 @@
 with open("input/q12.txt") as f:
-    INPUT = f.read()
+    INPUT = f.read().splitlines()
 
 print(
     sum(map(abs, (lambda pos: [
@@ -9,7 +9,7 @@ print(
             "R": (x, y, *{0: (dx, dy), 1: (dy, -dx), 2: (-dx, -dy), 3: (-dy, dx)}[a // 90]),
             "L": (x, y, *{0: (dx, dy), 3: (dy, -dx), 2: (-dx, -dy), 1: (-dy, dx)}[a // 90]),
         }[m])(*pos, m, a))
-        for m, a in [(x[0], int(x[1:])) for x in INPUT.splitlines()]
+        for m, a in [(x[0], int(x[1:])) for x in INPUT]
     ])((0, 0, 1, 0))[-1][:2]))
 )
 
@@ -21,6 +21,6 @@ print(
             "R": (x, y, *{0: (dx, dy), 1: (dy, -dx), 2: (-dx, -dy), 3: (-dy, dx)}[a // 90]),
             "L": (x, y, *{0: (dx, dy), 3: (dy, -dx), 2: (-dx, -dy), 1: (-dy, dx)}[a // 90]),
         }[m])(*pos, m, a))
-        for m, a in [(x[0], int(x[1:])) for x in INPUT.splitlines()]
+        for m, a in [(x[0], int(x[1:])) for x in INPUT]
     ])((0, 0, 10, 1))[-1][:2]))
 )

@@ -1,5 +1,5 @@
 with open("input/q11.txt") as f:
-    INPUT = f.read()
+    INPUT = f.read().splitlines()
 
 print(
     (lambda state: sum(w == "#" for w in state.values()))(
@@ -12,7 +12,7 @@ print(
                     else v
                 for (j, i), v in prev.items()
             },
-            {(j, i): x for j, row in enumerate(INPUT.splitlines()) for i, x in enumerate(row)}
+            {(j, i): x for j, row in enumerate(INPUT) for i, x in enumerate(row)}
         )
     )
 )
@@ -34,7 +34,7 @@ print(
                     or (v == "." and _look(vals, x + dx, y + dy, dx, dy))
                 )
             ),
-            {(j, i): x for j, row in enumerate(INPUT.splitlines()) for i, x in enumerate(row)}
+            {(j, i): x for j, row in enumerate(INPUT) for i, x in enumerate(row)}
         )
     )
 )

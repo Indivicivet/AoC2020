@@ -1,5 +1,5 @@
 with open("input/q7.txt") as f:
-    INPUT = f.read()
+    INPUT = f.read().splitlines()
 
 print(
     (lambda tree: sum(
@@ -10,7 +10,7 @@ print(
         bag: [b.split(" ", 1) for b in inside if b]
         for bag, inside in [
             [w.split(", ")[i and slice(None)] for i, w in enumerate(line.replace("bags", "bag").replace(".", "").replace("no other bag", "").split(" contain "))]
-            for line in INPUT.splitlines()
+            for line in INPUT
         ]
     })
 )
@@ -20,7 +20,7 @@ print(
         bag: [b.split(" ", 1) for b in inside if b]
         for bag, inside in [
             [w.split(", ")[i and slice(None)] for i, w in enumerate(line.replace("bags", "bag").replace(".", "").replace("no other bag", "").split(" contain "))]
-            for line in INPUT.splitlines()
+            for line in INPUT
         ]
     })
 )

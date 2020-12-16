@@ -1,5 +1,5 @@
 with open("input/q8.txt") as f:
-    INPUT = f.read()
+    INPUT = f.read().splitlines()
 
 print(
     (lambda prog:
@@ -12,7 +12,7 @@ print(
             )
         ))(0, 0, [])
     )(
-        [(x, int(n)) for line in INPUT.splitlines() for (x, n) in [line.split(" ")]]
+        [(x, int(n)) for line in INPUT for (x, n) in [line.split(" ")]]
     )
 )
 print(
@@ -33,7 +33,7 @@ print(
             ])
             for i in range(len(prog_orig))
         ))(
-            [(x, int(n)) for line in INPUT.splitlines() for (x, n) in [line.split(" ")]]
+            [(x, int(n)) for line in INPUT for (x, n) in [line.split(" ")]]
         )
     ))
 )

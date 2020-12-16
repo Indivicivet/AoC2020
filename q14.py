@@ -1,5 +1,5 @@
 with open("input/q14.txt") as f:
-    INPUT = f.read()
+    INPUT = f.read().splitlines()
 
 print(sum(
     (lambda *mem_mask:
@@ -10,7 +10,7 @@ print(sum(
                     | (int(instr.split(" = ")[1]) & sum(2**i for i, v in enumerate(reversed(mask)) if v == "X"))
                 }, mask
             )
-        )(*mem_mask, instr) for instr in INPUT.splitlines()][-1]
+        )(*mem_mask, instr) for instr in INPUT][-1]
     )({}, "0" * 36)[0].values()
 ))  
 print(sum(
@@ -24,7 +24,7 @@ print(sum(
                     ], mask)
                 }}, mask
             )
-        )(*mem_mask, instr) for instr in INPUT.splitlines()][-1]
+        )(*mem_mask, instr) for instr in INPUT][-1]
     )({}, "0" * 36, subaddresses=(
         _subs := lambda base, mask: [base] if "X" not in mask else (
             lambda replace_at_x: sum((_subs(replace_at_x(base, c), replace_at_x(mask, "0")) for c in "01"), [])

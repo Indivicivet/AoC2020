@@ -1,11 +1,11 @@
 with open("input/q9.txt") as f:
-    INPUT = f.read()
+    INPUT = f.read().splitlines()
 
 print(
     (lambda in_vals: next(
         x for i, x in enumerate(in_vals[25:])
         if not any(x == a + b and a != b for a in in_vals[i:i + 25] for b in in_vals[i:i + 25])
-    ))([int(line) for line in INPUT.splitlines()])
+    ))([int(line) for line in INPUT])
 )
 print(
     (lambda in_vals: 
@@ -17,5 +17,5 @@ print(
             x for i, x in enumerate(in_vals[25:])
             if not any(x == a + b and a != b for a in in_vals[i:i + 25] for b in in_vals[i:i + 25])
         ))
-    )([int(line) for line in INPUT.splitlines()])
+    )([int(line) for line in INPUT])
 )
