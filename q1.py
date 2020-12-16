@@ -1,7 +1,5 @@
 with open("input/q1.txt") as f:
     INPUT = f.read().splitlines()
 
-SAN = [int(x) for x in INPUT]  # could inline but meh...
-
-print(next(a * b for a in SAN for b in SAN if a + b == 2020))
-print(next(a * b * c for a in SAN for b in SAN for c in SAN if a + b + c == 2020))
+print((lambda ints: next(a * b for a in ints for b in ints if a + b == 2020))([int(x) for x in INPUT]))
+print((lambda ints: next(a * b * c for a in ints for b in ints for c in ints if a + b + c == 2020))([int(x) for x in INPUT]))
