@@ -3,9 +3,7 @@ with open("input/q17.txt") as f:
 
 print(
     (lambda state: sum(w == "#" for w in state.values()))(
-        (do_six := lambda updater, vals:
-            updater(updater(updater(updater(updater(updater(vals))))))
-        )(
+        (lambda f, vals: f(f(f(f(f(f(vals)))))))(
             lambda prev: {
                 (k, j, i): ("#" if ((
                         neighbours := sum(prev.get((k + r, j + q, i + p), 0) == "#"
@@ -23,9 +21,7 @@ print(
 )
 print(
     (lambda state: sum(w == "#" for w in state.values()))(
-        (do_six := lambda updater, vals:
-            updater(updater(updater(updater(updater(updater(vals))))))
-        )(
+        (lambda f, vals: f(f(f(f(f(f(vals)))))))(
             lambda prev: {
                 (m, k, j, i): ("#" if ((
                         neighbours := sum(prev.get((m + s, k + r, j + q, i + p), 0) == "#"
