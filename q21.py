@@ -17,7 +17,6 @@ print(
         })
     ))([(line.split(" (")[0].split(" "), line.split("contains ")[1][:-1].split(", ")) for line in INPUT])
 )
-
 print(
     (lambda data: (lambda mapping: ",".join(x for _, x in sorted(mapping.items())))(
         (lambda allergens: [allergens := (lambda prev: next(
