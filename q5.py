@@ -1,5 +1,5 @@
-with open("input/q5.txt") as f:
-    INPUT = f.read().splitlines()
+from aocd import data
+INPUT = data.splitlines()
 
 print(max(int(s[:-3].replace("F", "0").replace("B", "1"), 2) * 8 + int(s[-3:].replace("L", "0").replace("R", "1"), 2) for s in INPUT))
 print(next(

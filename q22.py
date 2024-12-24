@@ -1,5 +1,4 @@
-with open("input/q22.txt") as f:
-    INPUT = f.read()
+from aocd import data as INPUT
 
 print(
     (lambda result: sum((i + 1) * v for i, v in enumerate(reversed(sum(result, [])))))(

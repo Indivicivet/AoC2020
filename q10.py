@@ -1,5 +1,5 @@
-with open("input/q10.txt") as f:
-    INPUT = f.read().splitlines()
+from aocd import data
+INPUT = data.splitlines()
 
 print(
     (lambda ds: (sum(d == 1 for d in ds)) * (1 + sum(d == 3 for d in ds)))(

@@ -1,5 +1,5 @@
-with open("input/q21.txt") as f:
-    INPUT = f.read().splitlines()
+from aocd import data
+INPUT = data.splitlines()
 
 print(
     (lambda data: (lambda mapping: sum((x not in mapping.values()) for xs, _ in data for x in xs))(

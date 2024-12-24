@@ -1,5 +1,4 @@
-with open("input/q4.txt") as f:
-    INPUT = f.read()
+from aocd import data as INPUT
 
 print(sum(
     1 for x in INPUT.split("\n\n")

@@ -1,5 +1,5 @@
-with open("input/q18.txt") as f:
-    INPUT = f.read().splitlines()
+from aocd import data
+INPUT = data.splitlines()
 
 print(
     (lambda cls: sum(eval("".join(

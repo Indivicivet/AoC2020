@@ -1,5 +1,5 @@
-with open("input/q11.txt") as f:
-    INPUT = f.read().splitlines()
+from aocd import data
+INPUT = data.splitlines()
 
 print(
     (lambda state: sum(w == "#" for w in state.values()))(

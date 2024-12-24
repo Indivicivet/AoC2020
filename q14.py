@@ -1,5 +1,5 @@
-with open("input/q14.txt") as f:
-    INPUT = f.read().splitlines()
+from aocd import data
+INPUT = data.splitlines()
 
 print(sum(
     (lambda *mem_mask:

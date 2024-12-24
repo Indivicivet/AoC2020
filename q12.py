@@ -1,5 +1,5 @@
-with open("input/q12.txt") as f:
-    INPUT = f.read().splitlines()
+from aocd import data
+INPUT = data.splitlines()
 
 print(
     sum(map(abs, (lambda pos: [

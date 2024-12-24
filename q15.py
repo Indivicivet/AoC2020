@@ -1,4 +1,5 @@
-INPUT = [16, 11, 15, 0, 1, 7]
+from aocd import data
+INPUT = [int(x) for x in data.split(",")]
 
 print(
     (lambda turns, said_times:

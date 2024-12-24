@@ -1,5 +1,5 @@
-with open("input/q3.txt") as f:
-    INPUT = f.read().splitlines()
+from aocd import data
+INPUT = data.splitlines()
 
 PART2 = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
 
